@@ -23,7 +23,7 @@ class Tracker(db.Model):
     def __init__(self, location, report_user):
         self.location = location
         self.report_user = report_user
-        self.timestamp = datetime.datetime.utcnow()
+        self.timestamp = datetime.datetime.now()
 
     def __repr__(self):
         return '<User %r>' % self.report_user
