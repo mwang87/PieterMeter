@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="/tracking" method=post class=add-entry>
+      <dl>
+        <dt>Location:
+        <dd><input type=text size=30 name=location>
+        <dt>User:
+        <dd><input type=text size=30 name=user>
+        <dd><input type=submit value=Track>
+      </dl>
+    </form>
+  <ul class=entries>
+  {% for track in trackings %}
+    <li><h2>{{ track.location|safe }}</h2>{{ track.report_user|safe }}
+  {% else %}
+    <li><em>Unbelievable.  No trackings here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
