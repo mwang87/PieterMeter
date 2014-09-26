@@ -41,7 +41,8 @@ def createtrack():
     print location
     print user
     
-
+    if location == "writein":
+        location = request.form['writein']
         
     new_tracking = Tracker(location, user)
     db.session.add(new_tracking)
